@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.RegularExpressions;
 using UnityEngine;
 using Hnx8.ReadJEnc;
 
@@ -92,14 +91,14 @@ namespace foriver4725.ScriptsValidator
             }
 
             // Line ending conversion
-            if (options.Endline.Conversions != null)
+            if (options.Endline.Replacements != null)
             {
                 string originalText = File.ReadAllText(path, originalCharCode.GetEncoding());
 
                 string replacedText = originalText;
-                foreach ((string pattern, string replacement) in options.Endline.Conversions)
+                foreach ((string @old, string @new) in options.Endline.Replacements)
                 {
-                    replacedText = Regex.Replace(replacedText, pattern, replacement);
+                    replacedText = replacedText.Replace(@old, @new);
                 }
 
                 File.WriteAllText(path, replacedText, originalCharCode.GetEncoding());

@@ -70,8 +70,17 @@ namespace foriver4725.ScriptsValidator
                 var @out = @in switch
                 {
                     EDstEndline.DontSpecify => (null, string.Empty),
-                    EDstEndline.LF => (new[] { ("\r\n", "\r") }, "LF"),
-                    EDstEndline.CRLF => (new[] { ("[^\r]\n", "\r\n") }, "CRLF"),
+                    EDstEndline.LF => (new[]
+                    {
+                        ("\r\n", "\n"),
+                        ("\r", "\n"),
+                    }, "LF"),
+                    EDstEndline.CRLF => (new[]
+                    {
+                        ("\r\n", "\n"),
+                        ("\r", "\n"),
+                        ("\n", "\r\n"),
+                    }, "CRLF"),
                     _ => throw new InvalidEnumArgumentException(null, (int)@in, typeof(EDstEndline)),
                 };
                 outValidateOptions._Endline = @out;

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Hnx8.ReadJEnc;
 
 namespace foriver4725.ScriptsValidator
@@ -25,10 +25,10 @@ namespace foriver4725.ScriptsValidator
         // Skip processing if null
         CharCode CharCode { get; }
 
-        // Conversions: sequential regex-based replacements
-        //              Skip if null
-        // Name       : provides a name for the line ending type for logging
-        //              Never null
-        (IEnumerable<(string Pattern, string Replacement)> Conversions, string Name) Endline { get; }
+        // Replacements: sequential plain-text replacements (not regex)
+        //               Skip if null
+        // Name        : provides a name for the line ending type for logging
+        //               Never null
+        (IEnumerable<(string Old, string New)> Replacements, string Name) Endline { get; }
     }
 }
