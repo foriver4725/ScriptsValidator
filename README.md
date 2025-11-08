@@ -44,3 +44,27 @@ Once compilation is complete, you can open the tool from
 >
 > Also, ReadJEnc is an external library maintained by a third party.  
 > Please review its license and terms of use before including it in your project.
+
+## Usage & Features
+
+Before running the conversion, specify two things:  
+the **root directory** (the folder to search recursively)  
+and the **target file extensions**.
+
+Currently, the supported extensions are:  
+`.cs`, `.shader`, `.hlsl`, `.txt`, and `.md`.
+
+Next, select the desired **destination encoding** and **line ending format**,  
+then press the **Run Conversion** button.  
+Since this operation is irreversible, a confirmation dialog will appear before execution.
+
+As mentioned earlier, this tool is provided as a **sample implementation**,  
+so feel free to customize its behavior to suit your project’s workflow.  
+For example, in large-scale projects where the number of scripts is massive,  
+it’s recommended to extend the search roots beyond just the `Assets/` directory.
+
+The tool processes each detected file sequentially —  
+it converts files that require changes,  
+skips those that trigger errors,  
+and logs detailed information for every processed file,  
+making it easy to review exactly what was modified.
