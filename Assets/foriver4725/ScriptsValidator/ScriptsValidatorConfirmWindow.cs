@@ -12,7 +12,7 @@ namespace foriver4725.ScriptsValidator
         {
             EditorGUILayout.Separator(); // ==================================================
 
-            EditorGUILayout.LabelField("Do you really want to proceed with conversion?", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Confirm conversion?", EditorStyles.boldLabel);
 
             EditorGUILayout.Separator(); // ==================================================
 
