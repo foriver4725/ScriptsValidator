@@ -1,5 +1,8 @@
 # ScriptsValidator
 
+Available in other languages:  
+[中文版本](./README_CN.md) ｜ [日本語版](./README_JP.md)
+
 ## Description
 
 When working across different development environments,  
