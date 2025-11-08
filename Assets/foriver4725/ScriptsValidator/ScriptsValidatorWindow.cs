@@ -64,8 +64,8 @@ namespace foriver4725.ScriptsValidator
             if (GUILayout.Button("Run Conversion"))
             {
                 var screenPoint = GUIUtility.GUIToScreenPoint(_dropDownButtonRect.center);
-                var window   = CreateInstance<ScriptsValidatorConfirmWindow>();
-                window.ShowAsDropDown(new Rect(screenPoint, Vector2.zero), new Vector2(200, 100));
+                var window      = CreateInstance<ScriptsValidatorConfirmWindow>();
+                window.ShowAsDropDown(new(screenPoint, Vector2.zero), new(200, 100));
             }
 
             if (Event.current.type == EventType.Repaint)
